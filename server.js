@@ -7,7 +7,7 @@ const { request, response } = require("express");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-let HTTP_PORT = 8080
+let HTTP_PORT = 10533
 const cors = require('cors');
 app.use(cors({
     origin: '*'
@@ -151,7 +151,7 @@ app.post("/api/customer/", (req, res, next) => {
 // Email validation function
 function validateEmail(email) {
     // Use a regular expression for basic email validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     return emailPattern.test(email);
 }
 
